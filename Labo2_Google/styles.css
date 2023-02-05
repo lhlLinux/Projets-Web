@@ -1,0 +1,248 @@
+/* General setup */
+* {
+    margin: 0;
+    padding: 0;
+    /* inclure padding et la bordure dans la taille totale d'un élément */
+    box-sizing: border-box;
+  }  
+  
+  /*================================== Body ======================================*/
+  
+  body {
+    font-family: Google Sans,Roboto,Helvetica,Arial,sans-serif;
+	font-size: 1.1em;
+	font-weight: 400;
+	color: rgb(40, 40, 40);
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+    
+  /* header */
+  
+  .HeaderHigherthan600, .HeaderLowerthan600{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .Header_Right_Higherthan600, .Header_Left_Lowerthan600 {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+  }
+  
+  .Header_Left_Lowerthan600 {
+    color: blue;
+  }
+  
+  /* ======================================== main ======================================= */
+  
+	.main__Higherthan600, .main__Lowerthan600 {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.Search_Bar_Higherthan600, .Search_Bar_Lowerthan600 {
+		border: 1px solid lightgrey;
+		width: 600px;
+		height: 45px;
+		border-radius: 50px;
+		display: flex;
+		align-items: center;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-top: 20px;
+		margin-bottom: 25px;
+	}
+  
+    .Search_Bar_Lowerthan600 {
+        width: 500px;
+    }
+  
+	.Search_Bar_Higherthan600:hover, .Search_Bar_Lowerthan600:hover  {
+		box-shadow: 0px 0px 4px 3px #EEE;
+	}
+
+	.Search_Bar_Higherthan600 input, .Search_Bar_Lowerthan600 input  {
+		font-size: 16px;
+		flex: 1;
+		height: 30px;
+		margin-right: 15px;
+		margin-left: 15px;
+		border: none lightgrey;
+		outline: none;
+	}
+
+	main button {
+		font-size: 14px;
+		background-color: rgb(230, 250, 250);
+		border: 1px none lightgrey;
+		border-radius: 4px;
+		color : rgb(50, 40, 40);
+		margin: 0px 10px;
+		margin-bottom: 25px;
+		padding: 0px 15px;
+		line-height: 35px;
+		height: 35px;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	main button:hover {
+		border: 1px solid lightgrey;
+	}
+
+	a.ecole, a.ecole:hover {
+		text-decoration: none;
+	}
+	
+	.mic:hover {
+		cursor: pointer;
+	}
+
+	header a {
+		font-size: 1em;
+		margin-right: 15px;
+		margin-left: 15px;
+		color: rgb(45, 35, 35);
+		text-decoration: none;
+	}
+
+	main p {
+		color: rgb(60, 50, 50);
+		font-size: small;
+	}
+
+	main {
+		margin-bottom: 80px;
+	}
+
+	main a {
+		color: rgb(70, 70, 190);
+	}
+	
+	footer a {
+		color: grey;
+		text-decoration: none; 
+	}
+
+	a:hover {
+		text-decoration: underline; 
+		cursor: pointer;
+    }
+
+	.HeaderLowerthan600 a {
+		letter-spacing: 1px;
+		position: relative;
+	}
+
+	.HeaderLowerthan600 a:hover {
+		color: blue;
+		text-decoration: none;
+	}
+  
+  .HeaderLowerthan600 a:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 0;
+    height:2px;
+    background: blue;
+  }
+  
+  .HeaderLowerthan600 a:hover:after {
+    background: blue;
+    width: 100%;
+  }
+
+
+/*================================== Footer ======================================*/
+	
+	.Lower-Left-Footer-Higherthan600, .Lower-Right-Footer-Higherthan600 {
+		display: flex;
+	}
+  
+	footer {
+		background-color: #f5f3f2;
+		color: grey;
+	}
+
+	.Lower-Footer-Higherthan600 {
+		display: flex;
+		height: 50%;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.Lower-Footer-Lowerthan600 {
+		display: flex;
+		height: 50%;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.Pays {
+		height: 50%;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 15px;
+		border-bottom: 1px solid #CCC;
+		margin-left: 5px;
+	}
+ 
+	/* La liste */
+	 
+	ul {
+		list-style-type: none;
+		display: flex;
+		gap: 20px;
+		font-size: 14px;
+		padding: 10px;
+		padding-left: 25px;
+		padding-right: 25px;
+	} 
+
+
+
+  /* -------------------------------- media queries -------------------------------- */
+  
+  @media (min-width: 1101px) {
+    .Over600 {
+      display: flex;
+    }
+   
+   .Under600 {
+      display: none;
+    }
+  
+    .HeaderHigherthan600{
+      background-color: aquamarine;
+    }  
+  }
+  
+  @media (max-width: 1100px) { 
+    .Over600 {
+      display: flex;
+    }
+   
+   .Under600 {
+      display: none;
+    }
+  }
+
+  @media all and (max-width: 600px) {
+   .Over600 {
+      display: none;
+    }
+   
+   .Under600 {
+      display: flex;
+    }
+  }

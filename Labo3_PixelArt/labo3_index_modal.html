@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="revised" content="Laboratoire 3, 07/13/2022" /> 
+    <link href="styles_modal.css" rel="stylesheet">
+    <title>Pixel Art</title>
+</head>
+
+<body>
+	<h2>Pixel Art</h2>
+
+	<button id="btninfo">Info</button> <!-- bouton ouvrant la bulle d'aide -->
+    
+    <div id="MonInfoBulle" class="infobulle">
+        <!-- contenu de la bulle -->
+        <div class="bulle_text">
+          <span class="fermer">&times;</span>
+          <p>Bienvenu dans notre projet en art pixellisé. Pour démarrer le tout, 
+            survoler la grille ci-dessous avec la souris et vous aller voir que les
+            cases seront coloriées de façon aléatoire. Vous êtes aussi invités 
+            à choisir vos propres couleurs ainsi qu'à modifier le nombre de cases de la grille
+            selon votre gôut. On vous souhaite une excellente expérience.. </p>
+        </div>
+    </div>
+
+	<label class="etiquette" for="size">Taille de la grille</label>
+	<input name="size" id="sizeBar" type="range" min=2 max=50 step=1 value=16 />
+    
+    <p id="sizeLine"><!-- Ici sera affiché la taille de la grille --></p>
+    
+	<label class="etiquette" for="color">Choisissez vos couleurs:</label>
+	<input name="color" type="color" id="colorSelector" value="#ee5555" />
+	
+	<div class="palette" id="palette">
+		<!-- Ici sera générée la palette -->
+	</div>
+	
+	<button id="boutonEffacer">Effacer la palette</button>
+    
+    <div id="grid">
+		<!-- Ici sera générée la grille -->		
+    </div>
+    
+</body>
+<script src="code_modal.js"></script>
+</html>

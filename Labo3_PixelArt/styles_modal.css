@@ -1,0 +1,144 @@
+body {
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 1.2em;
+	font-weight: 400;
+}
+
+.gridSquare {
+	background-color: white;
+    /* Voir '#grid' plus bas pour le raisonnement du choix des bordures */
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    box-sizing: border-box;
+}
+
+.swatch {
+	background-color: white;
+    border: 1px inset gray;
+    box-sizing: border-box;
+    width: 24px;
+    height: 18px;
+    margin: 2px;
+}
+
+.etiquette {
+	margin: 5px;
+}
+
+.palette {
+	display: flex;
+	width: 400px;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: 5px;
+	min-height:26px;
+	
+}
+
+p#sizeLine {
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+
+#grid {
+    width : 400px;
+    height: 400px;
+    /*	on a bien réussi à afficher la grille en utilisant flex,
+        cependant la grille n'apparait pas toujours correctement
+        en raison de ses règles interne de calcul de l'alinéa:
+        dès qu'une rangée ne depasse la marge que de quelques pixels,
+        un retour à la ligne s'effectue, distortionnant la grille.
+        Par exemple, un 4x4 apparaît comme un 3x5 + 1 carré seul
+        en plein milieu de la dernière rangée. Cela peut être solutionné
+        en augmentant légèrement la largeur de la ligne. Par exemple,
+        on a trouvé que pour une largeur désirée de 500px, il faut ajouter
+        quelques pixels de plus, mais il faut bien tester et ce n'est pas
+        élégant comme pratique. Pour cette raison on a opté pour la grille
+        qui elle, donne des résultats constants sur toute la gamme de tailles.*/
+    display: grid;
+    
+    --size: 4;
+    grid-template-columns: repeat(var(--size), 1fr);
+    grid-template-rows: repeat(var(--size), 1fr);
+    
+    gap: 0;
+	padding: 0;
+    margin: 30px;
+    
+    /*
+        Pour un affichage correcte et plus efficace 
+		on établit une convention, évitant ainsi
+		le chevauchement des bordures des carrés. 
+		
+		Notez la différence d'épaisseur de la bordure
+		pour un cadre uniforme.
+	*/
+    
+    border-bottom: 3px solid gray;
+    border-left: 3px solid gray;
+    border-top: 2px solid gray;
+    border-right: 2px solid gray;
+}
+
+#colorSelector {
+	margin : 4px;
+}
+
+#boutonEffacer {
+	font-size: 0.9em;
+	padding: 0.2em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	border-radius: 6px;
+	border: 1px solid gray;
+}
+
+/* Affichage adapté pour petit écran */
+@media all and (max-width: 600px)
+{
+   #grid {
+    width : 300px;
+    height: 300px;
+	}
+}
+
+/* la bulle d'aide */
+.infobulle {
+    display: none; 
+    position: fixed;
+    justify-content: center;
+    right: 150px;
+    top: 100px;
+    z-index: 1;
+    width: 30%;
+    height: 20%;
+   }
+  
+  /* contenu de la bulle */
+  .bulle_text {
+    background-color: rgb(210, 236, 228);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    padding: 5px;
+    border: 1px solid rgb(240, 163, 163); 
+  }
+  
+  /* le bouton de fermeture */
+  .fermer {
+    color: grey;
+    float: right;
+    font-weight: bold;
+  }
+  
+  .fermer:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
